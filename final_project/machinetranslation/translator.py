@@ -1,3 +1,13 @@
+""""
+    translator.py
+    Translator main file.
+    :copyright:
+        (c) 2023 IBM -- https://github.com/ibm-developer-skills-network/xzceb-flask_eng_fr
+        (c) 2023 Juan Carcedo, All rights reserved
+    :licence: Apache License 2.0
+        https://github.com/ibm-developer-skills-network/xzceb-flask_eng_fr/blob/master/LICENSE
+"""
+
 import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -68,14 +78,4 @@ def create_watson_api() -> LanguageTranslatorV3:
 
     return language_translator
 
-
-def get_translated_text(translation_response) -> str:
-    """Return translated text.
-    :param translation_response: Full response from API.
-    :return str: Translated text only."""
-    return translation_response['translations'][0].get('translation')
 # END Watson related =================================
-
-
-if __name__ == '__main__':
-    watson_api = create_watson_api()

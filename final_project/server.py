@@ -7,7 +7,8 @@ app = Flask("Web Translator")
 @app.route("/englishToFrench")
 def englishToFrench() -> str:
     textToTranslate = request.args.get('textToTranslate')
-    # Write your code here
+
+    # Generate API to translate
     watson_api = translator.create_watson_api()
 
     return translator.english_to_french(watson_api, textToTranslate)
@@ -16,7 +17,8 @@ def englishToFrench() -> str:
 @app.route("/frenchToEnglish")
 def frenchToEnglish() -> str:
     textToTranslate = request.args.get('textToTranslate')
-    # Write your code here
+
+    # Generate API to translate
     watson_api = translator.create_watson_api()
 
     return translator.french_to_english(watson_api, textToTranslate)
